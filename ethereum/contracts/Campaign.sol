@@ -33,6 +33,10 @@ contract Campaign {
         require(msg.sender == manager);
         _;
     }
+    modifier canApprove(){
+        require(approvers[msg.sender]);
+        _;
+    }
 
     function Campaign(uint minimum, address creator) public {
         manager = creator;
@@ -58,10 +62,9 @@ contract Campaign {
         requests.push(newRequest);
     }
 
-    function approveRequest(uint index) public {
+    function approveRequest(uint index) public canApprove{
         Request storage request = requests[index];
 
-        require(approvers[msg.sender]);
         require(!request.approvals[msg.sender]);
 
         request.approvals[msg.sender] = true;
