@@ -8,10 +8,12 @@ class CampaignNew extends React.Component {
   state = {
     minContribution: "",
     errorMessage: "",
+    loading: false,
   };
 
   onSubmit = async (e) => {
     e.preventDefault();
+    this.setState({ loading: true, errorMessage: "" });
     try {
       const accounts = await web3.eth.getAccounts();
       await factory.methods
@@ -19,6 +21,8 @@ class CampaignNew extends React.Component {
         .send({ from: accounts[0] });
     } catch (e) {
       this.setState({ errorMessage: e.message });
+    } finally {
+      this.setState({ loading: false });
     }
   };
 
@@ -43,7 +47,9 @@ class CampaignNew extends React.Component {
             header="There was some errors with your submission"
             list={[this.state.errorMessage]}
           />
-          <Button primary>Create Campaign</Button>
+          <Button primary loading={this.state.loading}>
+            Create Campaign
+          </Button>
         </Form>
       </Layout>
     );
