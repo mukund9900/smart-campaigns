@@ -1,7 +1,7 @@
 "use strict";
 //create server
 const { createServer } = require("http");
-const HTTP_PORT = process.env.HTTP_PORT || 3000;
+const HTTP_PORT = process.env.PORT || 3000;
 
 //set up next
 const next = require("next");
@@ -11,8 +11,8 @@ const handler = routes.getRequestHandler(app);
 
 // prepare and serve
 app.prepare().then(() => {
-  createServer(handler).listen(HTTP_PORT, (err) => {
+  createServer(handler).listen(PORT, (err) => {
     if (err) console.log(err);
-    console.log(`NODE SERVER: serving on port number ${HTTP_PORT}`);
+    console.log(`NODE SERVER: serving on port number ${PORT}`);
   });
 });
