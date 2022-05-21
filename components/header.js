@@ -6,16 +6,16 @@ const Header = (props) => {
   return (
     <Menu style={{ marginTop: "10px" }}>
       <Link route="/">
-        <a className="item">_crowdFund</a>
+        <a className="item">Smart Campaigns</a>
       </Link>
 
       <Menu.Menu position="right">
         <Link route="/">
-          <a className="item">Campaigns</a>
+          <a className="item">Investments</a>
         </Link>
 
         <Link route="/">
-          <a className="item">Help</a>
+          <a className="item">About</a>
         </Link>
       </Menu.Menu>
     </Menu>

@@ -1,7 +1,7 @@
 "use strict";
 //create server
 const { createServer } = require("http");
-const HTTP_PORT = process.env.HTTP_PORT || 3000;
+const HTTP_PORT = process.env.PORT || 3000;
 
 //set up next
 const next = require("next");

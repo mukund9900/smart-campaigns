@@ -1,5 +1,4 @@
 const assert = require("assert");
-const { BADFLAGS } = require("dns");
 const ganache = require("ganache-cli");
 const Web3 = require("web3");
 

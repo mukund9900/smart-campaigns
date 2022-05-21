@@ -33,7 +33,9 @@ class ContributeForm extends React.Component {
     return (
       <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
         <Form.Field>
-          <label> Amount to contribute </label>
+          <label>
+            <h3>Amount to contribute</h3>
+          </label>
           <Input
             value={this.state.value}
             onChange={(e) => this.setState({ value: e.target.value })}
@@ -46,7 +48,7 @@ class ContributeForm extends React.Component {
           header="There was some errors with your submission"
           list={[this.state.errorMessage]}
         />
-        <Button primary loading={this.state.loading}>
+        <Button color="facebook" loading={this.state.loading}>
           Contribute
         </Button>
       </Form>
