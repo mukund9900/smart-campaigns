@@ -34,30 +34,30 @@ class CampaignShow extends React.Component {
       {
         header: manager,
         description: "Manager Public Address",
-        meta: "Owner of the campaign created, can create requests to witdraw the money",
+        meta: "Owner of the campaign, can create requests to witdraw the money",
         style: { overflowWrap: "break-word" },
       },
       {
         header: minimumContribution,
         description: "Minimum Contribution (wei)",
-        meta: "You must contribute a minimum of the above value to become an approver",
+        meta: "You must contribute a greater than the minimun value mentioned above in wei to become an approver",
       },
       {
         header: web3.utils.fromWei(balance, "ether"),
         description:
-          "Balance, is the how much money this campaign has left to spend",
+          "Balance, is how much money this campaign has left to spend",
         meta: "Contract Balance (ether)",
       },
       {
         header: requests,
         description:
-          "Number of Request created by the manager, and approvers can approve the requests",
+          "Number of Request created by the manager and Contributors/Approvers can approve the requests",
         meta: "Number of requests",
       },
       {
         header: approversCount,
         description:
-          "Number of contributors and also who can approve the requestds created by managerf to spend money",
+          "Number of contributors, contributors who can approve the requests created by manager to spend money",
         meta: "Number of contributors to the campaign",
       },
     ];
@@ -79,7 +79,7 @@ class CampaignShow extends React.Component {
             <Grid.Column>
               <Link route={`/campaign/${this.props.address}/requests`}>
                 <a>
-                  <Button primary>View Request</Button>
+                  <Button color="facebook">View Request</Button>
                 </a>
               </Link>
             </Grid.Column>

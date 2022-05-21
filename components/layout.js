@@ -6,6 +6,15 @@ import Head from "next/head";
 const Layout = (props) => {
   return (
     <Container>
+      <body
+        style={{
+          backgroundImage: "url('/assets/main.svg')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          opacity: "85%",
+        }}
+      ></body>
       <Head>
         <link
           async

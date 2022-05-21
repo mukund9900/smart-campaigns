@@ -30,7 +30,10 @@ class CampaignNew extends React.Component {
   render() {
     return (
       <Layout>
-        <h1>Create Campaign!</h1>
+        <Link route={`/`}>
+          <a className="item">Back</a>
+        </Link>
+        <h1>Create Smart Campaign!</h1>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Minimum Contribution</label>
@@ -48,7 +51,7 @@ class CampaignNew extends React.Component {
             header="There was some errors with your submission"
             list={[this.state.errorMessage]}
           />
-          <Button primary loading={this.state.loading}>
+          <Button color="facebook" loading={this.state.loading}>
             Create Campaign
           </Button>
         </Form>

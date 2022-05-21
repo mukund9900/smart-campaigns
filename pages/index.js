@@ -30,14 +30,14 @@ class CampaignIndex extends React.Component {
     return (
       <Layout>
         <div>
-          <h3>Open Campaigns</h3>
+          <h2>Open Campaigns</h2>
           <Link route="/campaign/new">
             <a className="item">
               <Button
                 floated="right"
                 content="Create Campaign"
                 icon="wordpress forms"
-                primary
+                color="facebook"
               />
             </a>
           </Link>
