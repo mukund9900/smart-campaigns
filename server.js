@@ -11,8 +11,8 @@ const handler = routes.getRequestHandler(app);
 
 // prepare and serve
 app.prepare().then(() => {
-  createServer(handler).listen(PORT, (err) => {
+  createServer(handler).listen(HTTP_PORT, (err) => {
     if (err) console.log(err);
-    console.log(`NODE SERVER: serving on port number ${PORT}`);
+    console.log(`NODE SERVER: serving on port number ${HTTP_PORT}`);
   });
 });
