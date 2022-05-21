@@ -42,11 +42,13 @@ class ContributeForm extends React.Component {
           />
         </Form.Field>
         <Message
-            error
-            header="There was some errors with your submission"
-            list={[this.state.errorMessage]}
-          />
-        <Button primary loading={this.state.loading}> Create </Button>
+          error
+          header="There was some errors with your submission"
+          list={[this.state.errorMessage]}
+        />
+        <Button primary loading={this.state.loading}>
+          Contribute
+        </Button>
       </Form>
     );
   }
